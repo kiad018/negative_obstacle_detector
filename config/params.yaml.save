@@ -1,0 +1,16 @@
+mock_terrain_node:
+  ros__parameters:
+    simulation_speed: 1.0       # Árok közeledési sebessége (m/s)
+    trench_start_x: 10.0        # Árok kezdeti távolsága (m)
+    trench_reset_x: 2.0         # Távolság, ahol újraindul a ciklus (m)
+    trench_width: 1.5           # Árok szélessége (m)
+    trench_depth: 0.7           # Árok mélysége (m)
+
+detector_node:
+  ros__parameters:
+    sensor_height: 1.5          # Szenzor magassága a talajhoz képest (m)
+    drop_threshold: 0.35        # Minimális magasságesés az árokperemhez (m)
+    radial_gap_threshold: 1.0   # Hiányzó talajreflexió küszöbe (m)
+    min_range: 1.0              # Szenzor közeli holttere (m)
+    max_range: 15.0             # Maximális észlelési hatótáv (m)
+    num_azimuth_bins: 72        # Sugaras szektorok száma (5°-os felbontás)

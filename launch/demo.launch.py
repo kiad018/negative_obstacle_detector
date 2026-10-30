@@ -1,26 +1,36 @@
+import os
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
+    pkg_dir = get_package_share_directory('negative_obstacle_detector')
+    config_file = os.path.join(pkg_dir, 'config', 'params.yaml')
+    rviz_config_file = os.path.join(pkg_dir, 'rviz', 'default.rviz')
+
     return LaunchDescription([
+        # 1. Terepgenerátor és kék autó modell
         Node(
             package='negative_obstacle_detector',
             executable='mock_terrain_publisher',
             name='mock_terrain_node',
-            output='screen'
+            output='screen',
+            parameters=[config_file]
         ),
+        # 2. Negatív akadály detektor és HUD szöveges kijelző
         Node(
             package='negative_obstacle_detector',
             executable='detector_node',
             name='detector_node',
             output='screen',
-            parameters=[{
-                'sensor_height': 1.5,
-                'drop_threshold': 0.35,
-                'radial_gap_threshold': 1.0,
-                'min_range': 1.0,
-                'max_range': 15.0,
-                'num_azimuth_bins': 72
-            }]
+            parameters=[config_file]
+        ),
+        # 3. RViz2 automatikus indítása a kész felülettel
+        Node(
+            package='rviz2',
+            executable='rviz2',
+            name='rviz2',
+            arguments=['-d', rviz_config_file],
+            output='screen'
         )
     ])

@@ -1,0 +1,16 @@
+mock_terrain_node:
+  ros__parameters:
+    simulation_speed: 1.0
+    trench_start_x: 9.0
+    trench_reset_x: 2.0
+    trench_width: 1.5
+    trench_depth: 0.7
+
+detector_node:
+  ros__parameters:
+    sensor_height: 1.5
+    drop_threshold: 0.35
+    radial_gap_threshold: 1.0
+    min_range: 1.0
+    max_range: 15.0
+    num_azimuth_bins: 72

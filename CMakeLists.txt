@@ -10,32 +10,29 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(geometry_msgs REQUIRED)
 find_package(pcl_conversions REQUIRED)
-find_package(PCL REQUIRED COMPONENTS common)
+find_package(PCL REQUIRED)
 
 include_directories(
   include
   ${PCL_INCLUDE_DIRS}
 )
 
-# Szintetikus terepgenerator (mock node a teszteleshez)
 add_executable(mock_terrain_publisher src/mock_terrain_publisher.cpp)
 ament_target_dependencies(mock_terrain_publisher
   rclcpp
   sensor_msgs
+  visualization_msgs
   pcl_conversions
 )
 target_link_libraries(mock_terrain_publisher ${PCL_LIBRARIES})
 
-# Negativ akadaly detektalo node
 add_executable(detector_node src/detector_node.cpp)
 ament_target_dependencies(detector_node
   rclcpp
   sensor_msgs
   visualization_msgs
   std_msgs
-  geometry_msgs
   pcl_conversions
 )
 target_link_libraries(detector_node ${PCL_LIBRARIES})
@@ -46,7 +43,10 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch rviz
+install(DIRECTORY
+  launch
+  rviz
+  config
   DESTINATION share/${PROJECT_NAME}
 )
 
