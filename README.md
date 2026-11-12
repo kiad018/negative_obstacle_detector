@@ -74,18 +74,42 @@ graph LR
 
 ---
 
-## Telepítés és Futtatás
+## Build és Futtatás
 
-### Fordítás
+Feltételezzük, hogy a munkaterület: `~/ros2_ws/`.
+
 ```bash
+# Csomag klónozása:
+cd ~/ros2_ws/src
+git clone https://github.com/kiad018/negative_obstacle_detector.git
+
+# Fordítás a workspace gyökeréből:
 cd ~/ros2_ws
 colcon build --packages-select negative_obstacle_detector --symlink-install
-source install/setup.bash
+
+# Környezet betöltése és központi indítás:
+source ~/ros2_ws/install/setup.bash
+ros2 launch negative_obstacle_detector demo.launch.py
 ```
 
-### Indítás
+---
+
+## Diagnosztika és tesztelés
+
+A futó rendszer állapota külön terminálablakból ellenőrizhető a ROS 2 beépített eszközeivel:
+
 ```bash
-ros2 launch negative_obstacle_detector demo.launch.py
+# Elérhető topicok listázása
+ros2 topic list
+
+# Aktív veszélyjelzés figyelése
+ros2 topic echo /hazard_warning
+
+# Legközelebbi akadály távolságának kiolvasása (méter)
+ros2 topic echo /hazard_distance
+
+# Útfelület hosszirányú emelkedésének/lejtésének figyelése (%)
+ros2 topic echo /terrain_slope_pct
 ```
 
 ---
