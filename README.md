@@ -1,13 +1,14 @@
 # 3D LiDAR Negative Obstacle & Terrain Slope Detector
 
+[![SZE AJR](https://img.shields.io/badge/Kurzus-SZE_AJR-8B0000)](https://sze-info.github.io/ajr/)
 [![ROS 2 Humble](https://img.shields.io/badge/ROS_2-Humble-22314E?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/)
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)](https://isocpp.org/)
 [![PCL 1.12](https://img.shields.io/badge/Point_Cloud_Library-1.12-00A86B)](https://pointclouds.org/)
 
 Valós idejű autonóm terepjáró szoftvercsomag negatív tereptárgyak (árkok, útszakadások, mély kátyúk) detektálására, tereplejtés- és rézsűbecslésre, valamint 3D RViz műszerfali megjelenítésre 3D LiDAR adatok alapján.
 
-* **Készítő:** Kincses Ádám ()
-* **Tantárgy:** Autonóm járművek és robotok programozása
+* **Készítő:** Kincses Ádám (`ZY2STZ`)
+* **Tantárgy:** [Autonóm járművek és robotok programozása (SZE)](https://sze-info.github.io/ajr/)
 * **AI Nyilatkozat:** A dokumentáció, a szimulációs környezet és a C++ forráskódok fejlesztése a Google Gemini (LLM) segítségével készült.
 
 ---
@@ -89,7 +90,12 @@ ros2 launch negative_obstacle_detector demo.launch.py
 
 ---
 
-## Hivatkozások
-* **ROS 2 Humble Dokumentáció:** [docs.ros.org/en/humble](https://docs.ros.org/en/humble/)
-* **Point Cloud Library (PCL):** [pointclouds.org](https://pointclouds.org/)
-* **RViz2 Visualization Guide:** [docs.ros.org/en/humble/Tutorials/Intermediate/RViz](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
+## Hivatkozások és Kapcsolódó Források
+
+* **Tantárgyi tananyag:** [Autonóm járművek és robotok programozása – Széchenyi István Egyetem (SZE)](https://sze-info.github.io/ajr/)
+* **ROS 2 Keretrendszer:** [ROS 2 Humble Hawksbill Dokumentáció](https://docs.ros.org/en/humble/)
+* **Pontfelhő feldolgozás:** [Point Cloud Library (PCL)](https://pointclouds.org/) és [perception_pcl (ROS 2 – PCL híd)](https://github.com/ros-perception/perception_pcl)
+* **Vizualizáció és üzenettípusok:**
+  * [RViz2 User Guide](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
+  * [sensor_msgs/PointCloud2 Specifikáció](https://docs.ros.org/en/humble/p/sensor_msgs/interfaces/msg/PointCloud2.html)
+  * [visualization_msgs/MarkerArray Specifikáció](https://docs.ros.org/en/humble/p/visualization_msgs/interfaces/msg/MarkerArray.html)
