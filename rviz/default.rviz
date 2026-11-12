@@ -9,24 +9,24 @@ Panels:
         - /MarkerArray1
         - /VehicleMarkers1
       Splitter Ratio: 0.5
-    Tree Height: 302
+    Tree Height: 557
 Visualization Manager:
   Class: ""
   Displays:
-    - Alpha: 0.25
+    - Alpha: 0.2
       Cell Size: 1
       Class: rviz_default_plugins/Grid
-      Color: 120; 120; 120
+      Color: 100; 100; 100
       Enabled: true
       Line Style:
-        Line Width: 0.019999999552965164
+        Line Width: 0.02
         Value: Lines
       Name: Grid
       Normal Cell Count: 0
       Offset:
         X: 0
         Y: 0
-        Z: -1.5499999523162842
+        Z: -1.50
       Plane: XY
       Plane Cell Count: 16
       Reference Frame: <Fixed Frame>
@@ -34,9 +34,9 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 1.5057497024536133
-        Min Value: -3.428903818130493
-        Value: true
+        Max Value: 0.2
+        Min Value: -3.2
+        Value: false
       Axis: Z
       Channel Name: intensity
       Class: rviz_default_plugins/PointCloud2
@@ -51,14 +51,14 @@ Visualization Manager:
       Min Intensity: 0
       Name: PointCloud2
       Position Transformer: XYZ
+      Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.07999999821186066
-      Style: Flat Squares
+      Size (m): 0.04
+      Style: Points
       Topic:
         Depth: 5
         Durability Policy: Volatile
-        Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /points_raw
@@ -69,9 +69,7 @@ Visualization Manager:
       Enabled: true
       Name: MarkerArray
       Namespaces:
-        ditch_line: true
-        ditch_spheres: true
-        hud: true
+        {}
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -83,7 +81,7 @@ Visualization Manager:
       Enabled: true
       Name: VehicleMarkers
       Namespaces:
-        pickup: true
+        {}
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -93,7 +91,7 @@ Visualization Manager:
       Value: true
   Enabled: true
   Global Options:
-    Background Color: 38; 38; 40
+    Background Color: 32; 32; 35
     Fixed Frame: base_link
     Frame Rate: 30
   Name: root
@@ -102,40 +100,21 @@ Visualization Manager:
       Hide Inactive Objects: true
     - Class: rviz_default_plugins/MoveCamera
     - Class: rviz_default_plugins/Select
-  Transformation:
-    Current:
-      Class: rviz_default_plugins/TF
   Value: true
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 14.5
-      Enable Stereo Rendering:
-        Stereo Eye Separation: 0.05999999865889549
-        Stereo Focal Distance: 1
-        Swap Stereo Eyes: false
-        Value: false
+      Distance: 13.5
       Focal Point:
-        X: 3.200000047683716
-        Y: 0
-        Z: -0.6000000238418579
+        X: 3.5
+        Y: 0.0
+        Z: -0.6
       Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05000000074505806
+      Focal Shape Size: 0.05
       Invert Z Axis: false
       Name: Current View
-      Near Clip Distance: 0.009999999776482582
-      Pitch: 0.36000001430511475
+      Near Clip Distance: 0.01
+      Pitch: 0.42
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.8499999046325684
-    Saved: ~
-Window Geometry:
-  Displays:
-    collapsed: false
-  Height: 525
-  Hide Left Dock: false
-  Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd000000010000000000000156000001b7fc0200000001fb000000100044006900730070006c006100790073010000003b000001b7000000c700ffffff00000160000001b700000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
-  Width: 700
-  X: 2930
-  Y: 19
+      Yaw: 2.75

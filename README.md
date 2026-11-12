@@ -1,42 +1,42 @@
 # 3D LiDAR Negative Obstacle & Terrain Slope Detector
 
-[![ROS 2](https://img.shields.io/badge/ROS_2-Humble-blue.svg)](https://docs.ros.org/en/humble/)
-[![C++](https://img.shields.io/badge/Language-C%2B%2B17-orange.svg)]()
-[![PCL](https://img.shields.io/badge/Library-PCL_1.12-green.svg)](https://pointclouds.org/)
+[![ROS 2 Humble](https://img.shields.io/badge/ROS_2-Humble-22314E?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/)
+[![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)](https://isocpp.org/)
+[![PCL 1.12](https://img.shields.io/badge/Point_Cloud_Library-1.12-00A86B)](https://pointclouds.org/)
 
 Valós idejű autonóm terepjáró szoftvercsomag negatív tereptárgyak (árkok, útszakadások, mély kátyúk) detektálására, tereplejtés- és rézsűbecslésre, valamint 3D RViz műszerfali megjelenítésre 3D LiDAR adatok alapján.
 
-**Készítő:** Kincses Ádám (Neptun: ZY2STZ)  
-**Tantárgy:** Autonóm járművek és robotok programozása  
-**Nyilatkozat:** A dokumentáció, a szimulációs környezet és a C++ forráskódok fejlesztése a Google Gemini (LLM) segítségével készült.
+* **Készítő:** Kincses Ádám ()
+* **Tantárgy:** Autonóm járművek és robotok programozása
+* **AI Nyilatkozat:** A dokumentáció, a szimulációs környezet és a C++ forráskódok fejlesztése a Google Gemini (LLM) segítségével készült.
 
 ---
 
-## Működés közben (Demo)
+## Működés közben (Élő Szimuláció)
 
 <p align="center">
-  <img src="./demo.gif" width="850" alt="Élő szimuláció" onerror="this.onerror=null; this.src='./rviz_screenshot.png';" />
+  <img src="demo.gif" width="820" alt="Élő szimuláció" />
 </p>
 
 ---
 
 ## Fő Képességek
 
-* **Robusztus negatív akadály detektálás:** Sugárirányú poláris szektorokra (Azimuthal Slicing) bontott pontfelhő-feldolgozás, amely kiszűri a lankás domboldalakat és csak a kritikus szinttöréseket azonosítja.
+* **Negatív akadály detektálás:** Sugárirányú poláris szektorokra (Azimuthal Slicing) bontott pontfelhő-feldolgozás, amely kiszűri a természetes hegyoldalakat és csak a hirtelen szinttöréseket azonosítja.
 * **Valós idejű lejtés- és rézsűmérés:** Menetirány szerinti hosszirányú emelkedés/lejtés (`CLIMB / DESCENT %`) és keresztirányú oldaldőlés (`BANK %`) számítása.
 * **Veszélyosztályozás és manőverjavaslat:**
   * `ROAD TRENCH` / `EXTREME RAVINE` $ightarrow$ Automatikus lassítás vagy vészfék (`DECELERATE` / `EMERGENCY BRAKE`).
   * `LANE COLLAPSE` (kátyú, féloldali omlás) $ightarrow$ Elkerülő sáv javaslata (`STEER LEFT / RIGHT`).
-* **Beépített szimuláció:** Procedurális 3D terep változatos akadályokkal és merev testként felépített terepjáró pickup modellel.
+* **Procedurális 3D szimuláció:** Meredek emelkedőkkel, völgyekkel és változatos akadályokkal felépített off-road pálya 3D pickup járműmodellel.
 
 ---
 
 ## Fejlesztési Mérföldkövek
 
-| 1. Kezdeti Prototípus | 2. Akadálykövetés & HUD | 3. Teljes Aszimmetrikus Terep |
+| 1. Kezdeti Prototípus | 2. Járműmodell & Akadálykövetés | 3. 3D Pickup, Lejtésszámítás & HUD |
 | :---: | :---: | :---: |
-| <img src="./rviz_screenshot2.png" width="280" /> | <img src="./rviz_screenshot1.png" width="280" /> | <img src="./rviz_screenshot.png" width="280" /> |
-| Diszkrét sugárirányú peremdetektálás | Dinamikus mélység- és távolságmérés | 3D Pickup, lejtésszámítás & döntési logika |
+| <img src="rviz_screenshot.png" height="180" alt="1. Kezdeti prototípus" /> | <img src="rviz_screenshot1.png" height="180" alt="2. Akadálykövetés" /> | <img src="rviz_screenshot2.png" height="180" alt="3. Végleges rendszer" /> |
+| Nyers sugárirányú árokperem-detektálás | Egyszerűsített járműtest és dinamikus pontkövetés | Aszimmetrikus terep, 3D HUD és lejtésmérés |
 
 ---
 
@@ -89,7 +89,7 @@ ros2 launch negative_obstacle_detector demo.launch.py
 
 ---
 
-## Hivatkozások és Felhasznált Irodalom
-1. **ROS 2 Documentation (Humble Hawksbill):** Standard interfaces, Node and Launch system ([docs.ros.org](https://docs.ros.org/en/humble/))
-2. **Point Cloud Library (PCL):** Point Cloud conversions, radial geometry analysis ([pointclouds.org](https://pointclouds.org/))
-3. **RViz2 Visualization Tutorials:** MarkerArray & PointCloud2 display conventions
+## Hivatkozások
+* **ROS 2 Humble Dokumentáció:** [docs.ros.org/en/humble](https://docs.ros.org/en/humble/)
+* **Point Cloud Library (PCL):** [pointclouds.org](https://pointclouds.org/)
+* **RViz2 Visualization Guide:** [docs.ros.org/en/humble/Tutorials/Intermediate/RViz](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
