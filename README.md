@@ -5,7 +5,7 @@
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)](https://isocpp.org/)
 [![PCL 1.12](https://img.shields.io/badge/Point_Cloud_Library-1.12-00A86B)](https://pointclouds.org/)
 
-Valós idejű autonóm terepjáró szoftvercsomag negatív tereptárgyak (árkok, útszakadások, mély kátyúk) detektálására, tereplejtés- és rézsűbecslésre, valamint 3D RViz műszerfali megjelenítésre 3D [LiDAR](https://hu.wikipedia.org/wiki/LIDAR) adatok alapján.
+Valós idejű autonóm terepjáró szoftvercsomag negatív tereptárgyak (árkok, útszakadások, mély kátyúk) detektálására, tereplejtés- és rézsűbecslésre, valamint 3D [RViz](https://wiki.ros.org/rviz) műszerfali megjelenítésre 3D [LiDAR](https://hu.wikipedia.org/wiki/LIDAR) adatok alapján.
 
 * **Készítő:** Kincses Ádám (`ZY2STZ`)
 * **Tantárgy:** [Autonóm járművek és robotok programozása (SZE)](https://sze-info.github.io/ajr/)
@@ -26,8 +26,8 @@ Valós idejű autonóm terepjáró szoftvercsomag negatív tereptárgyak (árkok
 * **Negatív akadály detektálás:** Sugárirányú poláris szektorokra (Azimuthal Slicing) bontott pontfelhő-feldolgozás, amely kiszűri a természetes hegyoldalakat és csak a hirtelen szinttöréseket azonosítja.
 * **Valós idejű lejtés- és rézsűmérés:** Menetirány szerinti hosszirányú emelkedés/lejtés (`CLIMB / DESCENT %`) és keresztirányú oldaldőlés (`BANK %`) számítása.
 * **Veszélyosztályozás és manőverjavaslat:**
-  * `ROAD TRENCH` / `EXTREME RAVINE` $ightarrow$ Automatikus lassítás vagy vészfék (`DECELERATE` / `EMERGENCY BRAKE`).
-  * `LANE COLLAPSE` (kátyú, féloldali omlás) $ightarrow$ Elkerülő sáv javaslata (`STEER LEFT / RIGHT`).
+  * `ROAD TRENCH` / `EXTREME RAVINE` → Automatikus lassítás vagy vészfék (`DECELERATE` / `EMERGENCY BRAKE`).
+  * `LANE COLLAPSE` (kátyú, féloldali omlás) → Elkerülő sáv javaslata (`STEER LEFT / RIGHT`).
 * **Procedurális 3D szimuláció:** Meredek emelkedőkkel, völgyekkel és változatos akadályokkal felépített off-road pálya 3D pickup járműmodellel.
 
 ---
@@ -90,13 +90,8 @@ ros2 launch negative_obstacle_detector demo.launch.py
 
 ---
 
-## Hivatkozások és Kapcsolódó Források
+## Hivatkozások
 
 * **Tantárgyi tananyag:** [Autonóm járművek és robotok programozása – Széchenyi István Egyetem (SZE)](https://sze-info.github.io/ajr/)
 * **Szenzortechnológia:** [LIDAR – Wikipédia](https://hu.wikipedia.org/wiki/LIDAR)
-* **ROS 2 Keretrendszer:** [ROS 2 Humble Hawksbill Dokumentáció](https://docs.ros.org/en/humble/)
-* **Pontfelhő feldolgozás:** [Point Cloud Library (PCL)](https://pointclouds.org/) és [perception_pcl (ROS 2 – PCL híd)](https://github.com/ros-perception/perception_pcl)
-* **Vizualizáció és üzenettípusok:**
-  * [RViz2 User Guide](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
-  * [sensor_msgs/PointCloud2 Specifikáció](https://docs.ros.org/en/humble/p/sensor_msgs/interfaces/msg/PointCloud2.html)
-  * [visualization_msgs/MarkerArray Specifikáció](https://docs.ros.org/en/humble/p/visualization_msgs/interfaces/msg/MarkerArray.html)
+* **Vizualizáció:** [RViz – ROS Wiki](https://wiki.ros.org/rviz)
