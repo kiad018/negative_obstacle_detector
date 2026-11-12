@@ -5,7 +5,7 @@
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)](https://isocpp.org/)
 [![PCL 1.12](https://img.shields.io/badge/Point_Cloud_Library-1.12-00A86B)](https://pointclouds.org/)
 
-Valós idejű autonóm terepjáró szoftvercsomag negatív tereptárgyak (árkok, útszakadások, mély kátyúk) detektálására, tereplejtés- és rézsűbecslésre, valamint 3D RViz műszerfali megjelenítésre 3D LiDAR adatok alapján.
+Valós idejű autonóm terepjáró szoftvercsomag negatív tereptárgyak (árkok, útszakadások, mély kátyúk) detektálására, tereplejtés- és rézsűbecslésre, valamint 3D RViz műszerfali megjelenítésre 3D [LiDAR](https://hu.wikipedia.org/wiki/LIDAR) adatok alapján.
 
 * **Készítő:** Kincses Ádám (`ZY2STZ`)
 * **Tantárgy:** [Autonóm járművek és robotok programozása (SZE)](https://sze-info.github.io/ajr/)
@@ -93,6 +93,7 @@ ros2 launch negative_obstacle_detector demo.launch.py
 ## Hivatkozások és Kapcsolódó Források
 
 * **Tantárgyi tananyag:** [Autonóm járművek és robotok programozása – Széchenyi István Egyetem (SZE)](https://sze-info.github.io/ajr/)
+* **Szenzortechnológia:** [LIDAR – Wikipédia](https://hu.wikipedia.org/wiki/LIDAR)
 * **ROS 2 Keretrendszer:** [ROS 2 Humble Hawksbill Dokumentáció](https://docs.ros.org/en/humble/)
 * **Pontfelhő feldolgozás:** [Point Cloud Library (PCL)](https://pointclouds.org/) és [perception_pcl (ROS 2 – PCL híd)](https://github.com/ros-perception/perception_pcl)
 * **Vizualizáció és üzenettípusok:**
